@@ -4,9 +4,9 @@ from django.core.paginator import Paginator
 from django.http import Http404,HttpResponseRedirect
 from django.utils.dateformat import format
 from datetime import datetime
-from blog.models import Entry, Link, Comment
-from blog.form import CommentForm
-from blog.tools import *
+from MONShellog.blog.models import Entry, Link, Comment
+from MONShellog.blog.form import CommentForm
+from MONShellog.blog.tools import *
 PAGE_SIZE = 7
 
 @render_to('index.html')

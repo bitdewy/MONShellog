@@ -1,7 +1,8 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from blog.feeds import *
-
+from MONShellog.blog.feeds import *
+from django.conf import settings
+from django.conf.urls.static import static
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
@@ -23,15 +24,15 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
-    (r'^admin/(.*)', admin.site.root),
-    (r'^$', 'blog.views.index'),
-    (r'^archive/(?P<year>\d{4})/(?P<month>(\d{1,2})?)/$', 'blog.views.month'),
-    (r'^archives/$', 'blog.views.archive'),
-    (r'^links/$', 'blog.views.link'),
-    (r'^entries/$', 'blog.views.entries'),
-    (r'^comments/$', 'blog.views.comments'),
+    (r'^admin/(.*)', include(admin.site.urls)),
+    (r'^$', 'MONShellog.blog.views.index'),
+    (r'^archive/(?P<year>\d{4})/(?P<month>(\d{1,2})?)/$', 'MONShellog.blog.views.month'),
+    (r'^archives/$', 'MONShellog.blog.views.archive'),
+    (r'^links/$', 'MONShellog.blog.views.link'),
+    (r'^entries/$', 'MONShellog.blog.views.entries'),
+    (r'^comments/$', 'MONShellog.blog.views.comments'),
     (r'^feeds/(?P<url>.*)/$', 'django.contrib.syndication.views.feed',{'feed_dict': feeds}),
-    url(r'^entry/(?P<key>.*)/$', 'blog.views.entry',name = 'entry'),
-    url(r'^category/(?P<cat>.*)/$', 'blog.views.category',name = 'cate'),
-    url(r'^tag/(?P<tag>.*)/$', 'blog.views.tag',name = 'tag'),
-)
+    url(r'^entry/(?P<key>.*)/$', 'MONShellog.blog.views.entry',name = 'entry'),
+    url(r'^category/(?P<cat>.*)/$', 'MONShellog.blog.views.category',name = 'cate'),
+    url(r'^tag/(?P<tag>.*)/$', 'MONShellog.blog.views.tag',name = 'tag'),
+) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

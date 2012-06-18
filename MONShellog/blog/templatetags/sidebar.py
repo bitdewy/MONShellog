@@ -1,6 +1,6 @@
 from django.template import Library
-from djangoproject.blog.models import Comment,Link
-from blog.tools import *
+from MONShellog.blog.models import Comment,Link
+from MONShellog.blog.tools import *
 
 register = Library()
 

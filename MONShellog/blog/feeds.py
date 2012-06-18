@@ -1,7 +1,7 @@
 from django.utils.translation import ugettext as _
-from django.contrib.syndication.feeds import Feed
+from django.contrib.syndication.views import Feed
 from django.utils.feedgenerator import Atom1Feed
-from blog.models import Entry
+from MONShellog.blog.models import Entry
 
 class RecentEntriesRSS(Feed):
     title = _('Rencent Entries | Monshellog')

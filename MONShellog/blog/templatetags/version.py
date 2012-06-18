@@ -1,5 +1,5 @@
 from django.template import Library
-from djangoproject import settings
+from MONShellog import settings
 
 register = Library()
 VERSION = getattr(settings,'VERSION','unknown')

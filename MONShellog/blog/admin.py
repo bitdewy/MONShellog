@@ -1,5 +1,5 @@
 from django.contrib import admin
-from blog.models import Category, Comment, Entry, Link, Tag
+from MONShellog.blog.models import Category, Comment, Entry, Link, Tag
 
 class CategoryAdmin(admin.ModelAdmin):
     search_fields = ['name']

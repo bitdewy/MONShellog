@@ -1,4 +1,4 @@
-from blog.models import Entry
+from MONShellog.blog.models import Entry
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.core.paginator import InvalidPage, EmptyPage
