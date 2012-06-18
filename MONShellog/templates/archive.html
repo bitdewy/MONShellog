@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{%load i18n%}
+{%block title%}{% trans "Archives" %} | Monshellog{%endblock%}
+
+{% block content %} 
+<div class="content">
+<div class="fuss nova">{% trans "Archives" %}</div>
+<div class="post">
+<div class="entry clearfix">
+<h3 id="month" class="clearfix">{% trans "Archives" %}：</h3>
+<ul class="list">	
+{% for arch in archive %}    
+<li><a href="{{arch.link}}" title="{{arch.title}}">{{arch.title}}</a></li>
+{%endfor%}
+</ul>
+<h3 id="cat" class="clearfix">{% trans "Categories" %}：</h3>
+<ul class="list">
+{%for cat in categories%}
+{%if not cat%}
+<li><a href="/category/uncategories" title="{% trans 'uncategories' %}">{% trans "uncategories" %}</a></li>
+{%else%}<li class="cat-item cat-item-{{cat.id}}"><a href="{{cat.get_absolute_url}}" title="{{cat.name}}">{{cat.name}}</a></li>
+{%endif%}
+{%endfor%}
+</ul>
+<h3 id="tag" class="clearfix">{% trans "Tags" %}：</h3>
+<div class="nova">
+<div class="st-tag-cloud">
+{% for tag in tags %}
+<a href="{{tag.get_absolute_url}}" id="tag-link-{{tag.id}}" style = "{{tag.style}}" title="{{tag.count}} {% trans 'references' %}">{{tag.name}}</a>&nbsp;
+{%endfor%}
+</div></div>
+</div>
+</div>
+</div>
+{% endblock %}

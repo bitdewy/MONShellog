@@ -1,0 +1,17 @@
+{% extends "base.html" %}{%load i18n%}
+{%block title%}{% trans "Links" %} | Monshellog{%endblock%}
+{% block content %}
+<div class="content">
+<div class="fuss nova">{% trans "BlogRoll" %}</div>
+<div class="post">
+<div class="entry clearfix">
+<h3 id="month" class="clearfix">{% trans "BlogRoll" %}：</h3>
+<ul class="list">
+{%for link in links%}
+<li><a href="{{link.site}}" title="{{link.detail}}" target="_blank">{{link.name}}</a></li>
+{%endfor%}
+</ul>
+</div>
+</div>
+</div>
+{% endblock %}

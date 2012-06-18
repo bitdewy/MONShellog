@@ -1,0 +1,80 @@
+{% extends "base.html" %}{%load i18n filters%}
+{%block title%}{{current.headline|truncatelen:"40"}} | Monshellog{%endblock%}
+{% block content %}
+<script type="text/javascript" src="/media/js/comment.textarea.js"></script>
+<script type="text/javascript">
+        function Quote(quote)
+        {            
+            var oEditor = FCKeditorAPI.GetInstance('id_comment') ;
+            oEditor.SetHTML(quote);
+            oEditor.Focus();
+            return true;
+        }
+</script> 
+<div class="content">
+{%if form.author.errors or form.email.errors or form.comment.errors or form.url.errors%}
+<div class="fuss nova"><Strong>{% trans "Oops" %} : </Strong>{% trans "Please correct follow error !" %}
+<a href="#respond">{% trans "correct it now." %}</a></div>
+{%endif%}
+<div class="post clearfix" id="post-{{current.pk}}">
+<div class="post-title">
+<h2><a href="{{current.get_absolute_url}}" rel="bookmark" title="{% trans 'Permanent Links to' %} {{current.headline}}">{{current.headline}}</a></h2>
+<span class="post-date">&lt;{% trans "Date" %}: {{current.pub_date|date:"Y-m-d H:i"}}&gt;</span>
+<span class="post-cat">&lt;{% trans "Category" %}: {%if current.category%}<a href="{{current.category.get_absolute_url}}">{{current.category}}</a>{%else%}<a href="/category/uncategories">{% trans "uncategories" %}</a>{%endif%}&gt;</span>
+<span class="post-hit">&lt;{% trans "Read" %}: {{current.hits}}&gt;</span>
+{%ifequal current.allow_comment 'yes'%}
+<span class="post-add-comment nova-r"><a href="#comments">{% trans "Show Comments" %}</a></span>
+{%else%}
+<span class="post-comments nova-r">{% trans "comment closed" %}</span>
+{%endifequal%}
+</div>
+<div class="entry clearfix">
+{{current.body|safe}}
+</div>
+<div class="notice nova"><div class="post-tags">{%for tag in current.tags.all%}<a href="{{tag.get_absolute_url}}" title="">{{tag}}</a>&nbsp;&nbsp;{%endfor%}</div></div>
+</div>
+
+<div id="comments">
+<h3 class="comments-title">{{current.comment_count}}{% trans " comments" %}</h3>
+<div class="comment-list">
+{%for comment in comments%}
+<div class="comment-childs" id="comment-{{comment.id}}">
+<div class="gravatar nova-l"><img alt="{{comment.author}}" src="{{comment.image}}" class="avatar avatar-36 photo" height="36" width="36"></div>
+<div class="comment-content">
+{%if comment.site%}<a href = "{{comment.site}}"><strong>{{comment.author}}</strong></a>
+{%else%}<strong>{{comment.author}}</strong>
+{%endif%}
+<br>
+<small class="commentmetadata"><a href="#respond" title="{% trans 'Leave a comment' %}">#</a> {{comment.pub_date|date:"Y-m-d H:i"}}</small>
+<p>{{comment.body|removetags:"p"|safe}}</P>
+<div class="thdrpy">
+{%ifequal current.allow_comment 'yes'%}
+[<a href="#respond" id = "{{comment.id}}" title = "{% trans 'response' %} {{comment.floor}} {% trans 'floor' %}" quote = "<blockquote>
+{% trans 'response' %} {{comment.floor}} {% trans 'floor' %}@{{comment.author}}<br>{{comment.body|removetags:"p"}}</blockquote>
+" onclick="Quote(document.getElementById({{comment.id}}).getAttribute('quote'));">{% trans "response" %} {{comment.floor}} {% trans "floor" %}</a>]
+{%endifequal%}
+</div>
+</div>
+</div>{%endfor%}
+{%if form%}
+<h3 class="comments-title" id="respond">{% trans "Leave a Comment" %}</h3>
+<form action="." method="post" id="commentform">
+<p>{{form.author.errors}}{{form.author}}
+<label for="author"><small>{% trans "Name (required)" %} - <a href="http://www.gravatar.com/" title="Gravatar image" target="_blank" rel="nofollow">{% trans "set Gravatar Head Image" %}</a></small></label></p>
+<p>{{form.email.errors}}{{form.email}}
+<label for="email"><small>{% trans "E-mail (not published) (required)" %}</small></label></p>
+<p>{{form.url.errors}}{{form.url}}
+<label for="url"><small>{% trans "Site/Blog" %}</small></label></p>
+<p>{{form.comment.errors}}{{form.comment}}</p>
+<p><input name="submit" class="form-submit" tabindex="5" value="{% trans 'submit comment' %}" type="submit"></p>
+</form>
+{%else%}
+<h3 class="comments-title" id="respond">{% trans "sorry,comment closed" %}</h3>
+{%endif%}
+</div>
+<div class="navigation"><div class="previous-entries nova-l">{% if previous %}<a href="{{previous.get_absolute_url}}" title="{{previous.headline}}">{% trans "previous" %}</a>{% endif %}</div> 
+<div class="next-entries nova-r">{% if next%}<a href="{{next.get_absolute_url}}" title="{{next.headline}}">{% trans "next" %}</a>{% endif %}</div></div>
+</div></div>
+{% endblock %}
+
+

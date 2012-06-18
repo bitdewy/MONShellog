@@ -1,0 +1,89 @@
+{%load i18n sidebar version%}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>{%block title%}MONShellog{%endblock%}</title>
+<link rel="alternate" type="application/atom+xml" title="{% trans 'Subscribe Latest entries' %} - Atom" href="/feeds/atom" />
+<link rel="alternate" type="application/rss+xml" title="{% trans 'Subscribe Latest entries' %} - RSS" href="/feeds/rss" />
+<link rel="stylesheet" type="text/css" media="all" href="/media/livesino/css/style.css">
+<link rel="icon shortcut" type="image/x-icon" href="/media/fav.ico"/>
+<link type="text/css" rel="stylesheet" href="/media/syntaxhighlighter/styles/shCore.css"/>
+<link type="text/css" rel="stylesheet" href="/media/syntaxhighlighter/styles/shThemeDefault.css"/>
+<link type="text/css" rel="stylesheet" href="/media/syntaxhighlighter/styles/shCore.css"/>
+<link type="text/css" rel="stylesheet" href="/media/syntaxhighlighter/styles/shThemeDefault.css"/>
+<script type="text/javascript" src="/media/syntaxhighlighter/scripts/shCore.js"></script>
+<script type="text/javascript" src="/media/syntaxhighlighter/scripts/shBrushBash.js"></script>
+<script type="text/javascript" src="/media/syntaxhighlighter/scripts/shBrushCpp.js"></script>
+<script type="text/javascript" src="/media/syntaxhighlighter/scripts/shBrushCSharp.js"></script>
+<script type="text/javascript" src="/media/syntaxhighlighter/scripts/shBrushCss.js"></script>
+<script type="text/javascript" src="/media/syntaxhighlighter/scripts/shBrushDelphi.js"></script>
+<script type="text/javascript" src="/media/syntaxhighlighter/scripts/shBrushDiff.js"></script>
+<script type="text/javascript" src="/media/syntaxhighlighter/scripts/shBrushGroovy.js"></script>
+<script type="text/javascript" src="/media/syntaxhighlighter/scripts/shBrushJava.js"></script>
+<script type="text/javascript" src="/media/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+<script type="text/javascript" src="/media/syntaxhighlighter/scripts/shBrushPhp.js"></script>
+<script type="text/javascript" src="/media/syntaxhighlighter/scripts/shBrushPlain.js"></script>
+<script type="text/javascript" src="/media/syntaxhighlighter/scripts/shBrushPython.js"></script>
+<script type="text/javascript" src="/media/syntaxhighlighter/scripts/shBrushRuby.js"></script>
+<script type="text/javascript" src="/media/syntaxhighlighter/scripts/shBrushScala.js"></script>
+<script type="text/javascript" src="/media/syntaxhighlighter/scripts/shBrushSql.js"></script>
+<script type="text/javascript" src="/media/syntaxhighlighter/scripts/shBrushVb.js"></script>
+<script type="text/javascript" src="/media/syntaxhighlighter/scripts/shBrushXml.js"></script>
+<script type="text/javascript">
+        SyntaxHighlighter.config.clipboardSwf = '/media/syntaxhighlighter/scripts/clipboard.swf';
+	SyntaxHighlighter.all('code');
+</script>
+<script type="text/javascript" src="/media/js/jquery-1.3.2.js"></script>
+<script type="text/javascript" src="/media/fckeditor/fckeditor.js"></script>
+
+</head>
+<body id="main">
+<div class="h">
+<div class="header">
+<div class="nav">
+<div class="nova-l">
+<a href="/"><img src="/media/livesino/images/logo.png" id="livesino-logo" alt="MONShellog"/></a>
+<div id="description">shello &amp; snow 是本blog的设计者，MONShellog中包含了他们俩的名字</div>
+</div>
+<ul class="nav-ul nova-r">
+<li class="page_item"><a href="/" title="{% trans 'Homepage' %}">{% trans "Home" %}</a></li>
+<li class="page_item page-item-1"><a href="/archives" title="{% trans 'Archives' %}">{% trans "Archives" %}</a></li>
+<li class="page_item page-item-2"><a href="/entries" title="{% trans 'Entries'%}">{% trans "Entries" %}</a></li>
+<li class="page_item page-item-3"><a href="/comments" title="{% trans 'Comments' %}">{% trans "comments" %}</a></li>
+<li class="page_item page-item-4"><a href="/links" title="{% trans 'Links'%}">{% trans "links" %}</a></li>
+</ul>
+</div>
+</div>
+{% block content %} 
+{% endblock %} 
+{% block sidebar %}
+{%get_sidebar%}
+<li class="sidebar-li">
+<h2 class="sidebar-title">{% trans "Meta" %}</h2>
+<ul class="widget_meta">
+<li><a href="/admin">{%if user.is_authenticated%}{% trans "Admin" %}{%else%}{% trans "Login" %}{%endif%}</a></li>
+</ul>
+</li>
+</ul>
+</div>
+{% endblock %}
+
+<div class="footer clearfix">
+<div class="footer-bg"></div>
+<div class="footer-credits">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody>
+<tr>
+<td><span class="footer-fuss"><a href="http://www.apache.org/" target="_blank" title="Apache Web Server"><img src="/media/livesino/images/apache.png" alt="Apache"/></a></td>
+<td><span class="footer-fuss"><a href="http://www.mysql.com/" target="_blank" title="The world's most popular open source database"><img src="/media/livesino/images/mysql.png" alt="MySQL"/></a></td>
+<td><span class="footer-fuss"><a href="http://www.python.org/" target="_blank" title="Python Programming Language"><img src="/media/livesino/images/python.png"/></a></td>
+<td><span class="footer-fuss"><a href="http://www.djangoproject.com/" target="_blank" title="Open Source Web Framework"><img src="/media/livesino/images/django.png" alt="Django"/></a></td>
+<td><span class="footer-fuss">Theme by</span><br/><a href="http://livesino.net/theme-codename-h" target="_blank" style="color:#FF0000;" title="Get Theme Codename H">Codename H</a>
+<td><span class="footer-fuss">Powered by <a href="/" style="color:#08328C;" target="_blank">shello &amp; snow</a> {%get_version%}<br>Copyright &copy; 2009 All rights reserved.</span></td>
+</tbody></table>
+</div>
+</div>
+</div>
+</body>
+</html>

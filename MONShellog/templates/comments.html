@@ -1,0 +1,25 @@
+{% extends "base.html" %}{% load i18n %}
+{%block title%}{% trans "Recently Comments" %} | Monshellog{%endblock%}
+{% block content %} 
+<div class="content">
+<div class="fuss nova">{% trans "Comments" %}</div>
+<div class="post">
+<div class="entry clearfix">
+{%for comment in comments%}
+<div class="comment nova" id="comment-{{comment.id}}">
+<div class="gravatar nova-l"><img alt="{{comment.author}}" src="{{comment.image}}" class="avatar avatar-40 photo" height="40" width="40"></div>
+<div class="comment-content">
+{%if comment.site%}<a href = "{{comment.site}}" target="_blank" title = "{{comment.author}}{% trans "'s site/blog"%}"><strong>{{comment.author}}</strong></a>
+{%else%}<strong>{{comment.author}}</strong>
+{%endif%}
+<br>
+<small class="commentmetadata"><a href="{{comment.entry.get_absolute_url}}#comment-{{comment.id}}" title="{% trans 'show the comment' %}">#</a> {{comment.pub_date|date:"Y-m-d H:i"}}
+[ <a href="{{comment.entry.get_absolute_url}}#comment-{{comment.id}}" rel="bookmark" title="{% trans 'show'%} {{comment.author}}{%trans "'s comment"%}">{% trans "show the comment" %}</a> ]
+[ <a href="{{comment.entry.get_absolute_url}}" rel="bookmark" title="{{comment.entry.headline}}">{% trans "show the entry" %}</a> ]</small>
+<p>{{comment.body|removetags:"p"|safe}}</p>
+</div>
+</div>{%endfor%}
+</div>
+</div>
+</div>
+{% endblock %}

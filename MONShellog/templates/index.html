@@ -1,0 +1,29 @@
+{% extends "base.html" %}{%load i18n filters%}
+{% block content %} 
+<div class="content">
+{%block bar%}
+{%endblock%}
+{%for entry in entries%}
+<div class="post clearfix" id="post-{{entry.pk}}">
+<div class="post-title">
+<h2><a href="{{entry.get_absolute_url}}" rel="bookmark" title="{% trans 'Permanent Links to' %} {{entry.headline}}">{{entry.headline}}</a></h2>
+<span class="post-date">&lt;{% trans "Date" %}: {{entry.pub_date|date:"Y-m-d H:i"}}&gt;</span>
+<span class="post-cat">&lt;{% trans "Category" %}: {%if entry.category%}<a href="{{entry.category.get_absolute_url}}">{{entry.category}}</a>{%else%}<a href="/category/uncategories">{% trans "uncategories" %}</a>{%endif%}&gt;</span>
+<span class="post-hit">&lt;{% trans "Read" %}: {{entry.hits}}&gt;</span>
+<span class="post-comments nova-r">
+{%ifequal entry.allow_comment 'yes'%}<a href="{{entry.get_absolute_url}}#respond" title="{% trans "comment on" %} {{entry.headline}}">
+{%if not entry.comment_count%}{% trans "No comments" %}</a>{%else%}{{entry.comment_count}} {% trans " comments" %}</a>{%endif%} {%else%}{% trans "comment closed" %}{%endifequal%}
+</span>
+</div>
+<div class="entry clearfix">
+{{entry.body|safe|truncatewords_html:"40"}}
+<p>{% trans 'Permalink' %}: <a href="{{entry.get_absolute_url}}" rel="bookmark" title="{% trans 'Permanent Links to' %} {{entry.headline}}">{{entry.headline|truncatelen:"40"}}</a></p>
+</div>
+<div class="notice nova"><div class="post-tags">{%for tag in entry.tags.all%}<a href="{{tag.get_absolute_url}}" title="">{{tag}}</a>&nbsp;&nbsp;{%endfor%}</div></div>
+</div>{% endfor %}
+
+<div class="navigation"><div class="previous-entries nova-l">{% if has_previous %}<a href="?page={{previous}}" title="{% trans "previous page" %}">{% trans "previous" %}</a>{% endif %}</div> 
+<div class="next-entries nova-r">{% if has_next%}<a href="?page={{next}}" title="{% trans 'next page' %}">{% trans "next" %}</a>{% endif %}</div></div>
+</div>
+{% endblock %}
+

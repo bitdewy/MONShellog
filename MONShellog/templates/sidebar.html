@@ -1,0 +1,77 @@
+{%load i18n filters%}
+<div class="sidebar">
+<ul class="sidebar-ul">
+<li class="sidebar-li">
+<div class="sidebar-rssfeed"><a href="/feeds/rss">{% trans "Subscribe RSS Feed" %}</a></div>
+<div class="sidebar-widget sidebar-rssitems">{% trans "Subscribe with" %}: 
+<a href="#" target="_blank" rel="nofollow" style="color:#54BF4C;">Windows Live</a>, 
+<a href="#" target="_blank" rel="nofollow" style="color:#979DD7;">Google Reader</a>, 
+<a href="#" target="_blank" rel="nofollow" style="color:#2578CD;">iGoogle</a>, 
+<a href="#" target="_blank" rel="nofollow" style="color:#D32930;">My Yahoo!</a>, 
+<a href="#" target="_blank" rel="nofollow" style="color:#7879AE;">PageFlakes.com</a>, 
+<a href="#" target="_blank" rel="nofollow" style="color:#FA930D;">NetVibes.com</a>, 
+<a href="#" target="_blank" rel="nofollow"  style="color:#79A539;">Newsgator.com</a>, 
+<a href="#" target="_blank" rel="nofollow" style="color:#F05008;">My AOL</a>, 
+<a href="#" target="_blank" rel="nofollow" style="color:#1D78D9;">BlogLines.com</a>, 
+<a href="#" target="_blank" rel="nofollow" style="color:#D23D05;">Anothr.com</a></div>
+</li>
+<li class="sidebar-li">
+<h2 class="sidebar-title">{% trans "Categories" %}</h2>
+<ul class="list_page">
+{%for cat in categories%}
+{%if not cat%}
+<li><a href="/category/uncategories" title="{% trans 'uncategories' %}">{% trans "uncategories" %}</a></li>
+{%else%}<li><a href="{{cat.get_absolute_url}}" title="{{cat.name}}">{{cat.name}}</a></li>
+{%endif%}
+{%endfor%}
+</ul>
+</li>
+
+<li class="sidebar-li">
+<h2 class="sidebar-title">{% trans "Latest Entries" %}</h2>
+<ul class="list_page">
+{%for entry in entries%}
+<li><a href="{{entry.get_absolute_url}}" title="{{entry.headline}}">{{entry.headline|safe|truncatewords_html:"2"}}</a></li>
+{%endfor%}	
+</ul>
+</li>
+
+<li class="sidebar-li">
+<h2 class="sidebar-title">{% trans "Recent Comments" %}</h2>
+<ul class="list_com">
+{%for comment in comments%}
+<li>
+<a href="{{comment.entry.get_absolute_url}}#comment-{{comment.id}}" title="{% trans 'Show the Comment' %}">{{comment.author}}</a> : <a href="{{comment.entry.get_absolute_url}}#comment-{{comment.id}}" title="{% trans 'Show the Comment' %}">{{comment.body|truncatelen:"30"|safe}}</a></li>
+{%endfor%}
+</ul>
+</li>
+
+<li class="sidebar-li">
+<h2 class="sidebar-title">{% trans "Tags Cloud" %}</h2>
+
+<div class="sidebar-widget sidebar-tags">
+{% for tag in tags %}
+<a href="{{tag.get_absolute_url}}" class="tag-cloud-{{tag.weight}}" title="{{tag.count}} {% trans 'references' %}">{{tag.name}}</a>&nbsp;
+{% endfor %}
+</div>
+</li>
+
+<li class="sidebar-li">
+<h2 class="sidebar-title">{% trans "Archives" %}</h2>
+<ul class="list_archives">
+{% for arch in archive %}
+<li><a href="{{arch.link}}" title="{{arch.title}}">{{arch.title}}</a></li>
+{% endfor %}
+</ul>
+</li>
+
+<li class="sidebar-li">
+
+<h2 class="sidebar-title">{% trans "Links" %}</h2>
+<ul class="widget_links">
+{%for link in links%}
+<li><a href="{{link.site}}" title="{{link.detail}}">{{link.name}}</a></li>
+{%endfor%}
+</ul>
+</li>
+

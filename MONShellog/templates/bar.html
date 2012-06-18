@@ -1,0 +1,11 @@
+{% extends "index.html" %}{% load i18n %}
+{%block title%}{{name}}:{%ifequal name 'Category'%}{%if category%}{{category.name}}{%else%}{% trans "uncategories"%}{%endif%}{%endifequal%}
+{%ifequal name 'Tag'%}{{tag.name}}{%endifequal%}
+{%ifequal name 'Archive'%}{{archive}}{%endifequal%} | Monshellog{%endblock%}
+{%block bar%}
+<div class="fuss nova">
+{%ifequal name 'Category'%}{% trans "Category" %} : <strong>{%if category%}{{category.name}}{%else%}{% trans "uncategories" %}{%endif%}</strong></div>{%endifequal%}
+{%ifequal name 'Tag'%}{% trans "Tag" %} : <strong>{{tag.name}}</strong></div>{%endifequal%}
+{%ifequal name 'Archive'%}{% trans "Archives" %} : <strong>{{archive}}</strong></div>{%endifequal%}
+{%endblock%}
+

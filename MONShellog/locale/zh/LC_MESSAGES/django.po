@@ -1,0 +1,402 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-06-13 19:55+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: blog/feeds.py:6
+msgid "Rencent Entries | Monshellog"
+msgstr "最新文章 | Monshellog"
+
+#: blog/feeds.py:8
+msgid "Recent entries posted to Monshellog"
+msgstr "Monsehllog 上的最新文章"
+
+#: blog/form.py:22
+msgid "site/blog"
+msgstr "网站/博客"
+
+#: blog/models.py:7
+msgid "Publish"
+msgstr "发布"
+
+#: blog/models.py:8
+msgid "Draft"
+msgstr "草稿"
+
+#: blog/models.py:11
+msgid "Yes"
+msgstr "是"
+
+#: blog/models.py:12
+msgid "No"
+msgstr "否"
+
+#: blog/models.py:16 blog/models.py:22 blog/models.py:46
+#: templates/bar.html:7 templates/entry.html:14 templates/index.html:11
+msgid "Category"
+msgstr "分类"
+
+#: blog/models.py:16
+msgid "The name of this category"
+msgstr "分类名称"
+
+#: blog/models.py:17 blog/models.py:32
+msgid "Slug"
+msgstr "链接"
+
+#: blog/models.py:17 blog/models.py:32
+msgid "Use as URL"
+msgstr "作为URL的一部分"
+
+#: blog/models.py:18 blog/models.py:101
+msgid "Description"
+msgstr "详细描述"
+
+#: blog/models.py:18
+msgid "description this category,you can leave it blank"
+msgstr "描述该分类，可以留空"
+
+#: blog/models.py:21 templates/archive.html:16 templates/sidebar.html:19
+msgid "Categories"
+msgstr "分类"
+
+#: blog/models.py:31
+msgid "Tag name"
+msgstr "标签名"
+
+#: blog/models.py:33
+msgid "Reference count"
+msgstr "引用次数"
+
+#: blog/models.py:36 blog/models.py:51 templates/archive.html:25
+msgid "Tags"
+msgstr "标签"
+
+#: blog/models.py:37 templates/bar.html:8
+msgid "Tag"
+msgstr "标签"
+
+#: blog/models.py:47
+msgid "title"
+msgstr "标题"
+
+#: blog/models.py:48
+msgid "Content"
+msgstr "正文"
+
+#: blog/models.py:49
+msgid "Published Date"
+msgstr "发布时间"
+
+#: blog/models.py:50
+msgid "Hits"
+msgstr "阅读次数"
+
+#: blog/models.py:52
+msgid "status"
+msgstr "状态"
+
+#: blog/models.py:53
+msgid "Allow comment or not"
+msgstr "是否允许评论"
+
+#: blog/models.py:54
+msgid "Comment count"
+msgstr "评论数"
+
+#: blog/models.py:57
+msgid "entries"
+msgstr "文章"
+
+#: blog/models.py:58
+msgid "entry"
+msgstr "文章"
+
+#: blog/models.py:76
+msgid "Commented entry"
+msgstr "评论文章"
+
+#: blog/models.py:77
+msgid "Comment author"
+msgstr "评论人"
+
+#: blog/models.py:78
+msgid "IP address"
+msgstr "IP地址"
+
+#: blog/models.py:79
+msgid "User agent information"
+msgstr "用户信息"
+
+#: blog/models.py:80
+msgid "E-Mail"
+msgstr "邮箱"
+
+#: blog/models.py:81 blog/models.py:100
+msgid "Site"
+msgstr "网站"
+
+#: blog/models.py:82
+msgid "Comment content"
+msgstr "评论内容"
+
+#: blog/models.py:83
+msgid "Published date"
+msgstr "发表时间"
+
+#: blog/models.py:86 templates/base.html:53 templates/comments.html:5
+msgid "Comments"
+msgstr "评论"
+
+#: blog/models.py:87
+msgid "Comment"
+msgstr "评论"
+
+#: blog/models.py:99
+msgid "Link name"
+msgstr "名称"
+
+#: blog/models.py:102
+msgid "Image address"
+msgstr "图片地址"
+
+#: blog/models.py:105 templates/base.html:54 templates/link.html:2
+#: templates/sidebar.html:70
+msgid "Links"
+msgstr "链接"
+
+#: blog/models.py:106
+msgid "Link"
+msgstr "链接"
+
+#: templates/archive.html:20 templates/bar.html:2 templates/bar.html.py:7
+#: templates/entry.html:14 templates/index.html:11 templates/sidebar.html:23
+msgid "uncategories"
+msgstr "未分类"
+
+#: templates/archive.html:3 templates/archive.html.py:7
+#: templates/archive.html:10 templates/bar.html:9 templates/base.html:51
+#: templates/sidebar.html:60
+msgid "Archives"
+msgstr "存档"
+
+#: templates/archive.html:29 templates/sidebar.html:54
+msgid "references"
+msgstr "个主题"
+
+#: templates/base.html:7 templates/base.html:8
+msgid "Subscribe Latest entries"
+msgstr "Monshellog的最新文章"
+
+#: templates/base.html:50
+msgid "Homepage"
+msgstr "主页"
+
+#: templates/base.html:50
+msgid "Home"
+msgstr "主页"
+
+#: templates/base.html:52 templates/entries.html:8
+msgid "Entries"
+msgstr "文章"
+
+#: templates/base.html:53
+msgid "comments"
+msgstr "评论"
+
+#: templates/base.html:54
+msgid "links"
+msgstr "链接"
+
+#: templates/base.html:63
+msgid "Meta"
+msgstr "管理"
+
+#: templates/base.html:65
+msgid "Admin"
+msgstr "网站管理"
+
+#: templates/base.html:65
+msgid "Login"
+msgstr "登录"
+
+#: templates/comments.html:2
+msgid "Recently Comments"
+msgstr "最新评论"
+
+#: templates/comments.html:12
+msgid "'s site/blog"
+msgstr "的网站/博客"
+
+#: templates/comments.html:16 templates/comments.html.py:17
+msgid "show the comment"
+msgstr "查看评论"
+
+#: templates/comments.html:17
+msgid "show"
+msgstr "查看"
+
+#: templates/comments.html:17
+msgid "'s comment"
+msgstr "的评论"
+
+#: templates/comments.html:18
+msgid "show the entry"
+msgstr "查看原文"
+
+#: templates/entries.html:2 templates/entries.html.py:5
+msgid "All Entries"
+msgstr "所有文章"
+
+#: templates/entries.html:16 templates/index.html:25
+msgid "previous page"
+msgstr "上一页"
+
+#: templates/entries.html:16 templates/entry.html:66 templates/index.html:25
+msgid "previous"
+msgstr "上一页"
+
+#: templates/entries.html:17 templates/index.html:26
+msgid "next page"
+msgstr "下一页"
+
+#: templates/entries.html:17 templates/entry.html:67 templates/index.html:26
+msgid "next"
+msgstr "下一页"
+
+#: templates/entry.html:7
+msgid "Oops"
+msgstr "(-_-')"
+
+#: templates/entry.html:7
+msgid "Please correct follow error !"
+msgstr "请修正以下错误 !"
+
+#: templates/entry.html:8
+msgid "correct it now."
+msgstr "立即修改."
+
+#: templates/entry.html:12 templates/index.html:9 templates/index.html.py:20
+msgid "Permanent Links to"
+msgstr "查看 "
+
+#: templates/entry.html:13 templates/index.html:10
+msgid "Date"
+msgstr "发布时间"
+
+#: templates/entry.html:15 templates/index.html:12
+msgid "Read"
+msgstr "阅读"
+
+#: templates/entry.html:17
+msgid "Show Comments"
+msgstr "查看评论"
+
+#: templates/entry.html:19 templates/index.html:15
+msgid "comment closed"
+msgstr "禁止评论"
+
+#: templates/entry.html:29 templates/index.html:15
+msgid " comments"
+msgstr "条评论"
+
+#: templates/entry.html:39
+msgid "Leave a comment"
+msgstr "发表评论"
+
+#: templates/entry.html:43 templates/entry.html.py:44 templates/entry.html:45
+msgid "response"
+msgstr "回复"
+
+#: templates/entry.html:43 templates/entry.html.py:44 templates/entry.html:45
+msgid "floor"
+msgstr "楼"
+
+#: templates/entry.html:51
+msgid "Leave a Comment"
+msgstr "发表评论"
+
+#: templates/entry.html:54
+msgid "Name (required)"
+msgstr "姓名(必填)"
+
+#: templates/entry.html:54
+msgid "set Gravatar Head Image"
+msgstr "设置Gravatar头像"
+
+#: templates/entry.html:56
+msgid "E-mail (not published) (required)"
+msgstr "邮箱(不会公开)(必填)"
+
+#: templates/entry.html:58
+msgid "Site/Blog"
+msgstr "网站/博客"
+
+#: templates/entry.html:60
+msgid "submit comment"
+msgstr "提交评论"
+
+#: templates/entry.html:63
+msgid "sorry,comment closed"
+msgstr "对不起，该文章禁止评论"
+
+#: templates/index.html:14
+msgid "comment on"
+msgstr "评论 "
+
+#: templates/index.html:15
+msgid "No comments"
+msgstr "没有评论"
+
+#: templates/index.html:20
+msgid "Permalink"
+msgstr "查看原文"
+
+#: templates/link.html:5 templates/link.html.py:8
+msgid "BlogRoll"
+msgstr "链接"
+
+#: templates/sidebar.html:5
+msgid "Subscribe RSS Feed"
+msgstr "RSS订阅本站更新"
+
+#: templates/sidebar.html:6
+msgid "Subscribe with"
+msgstr "订阅到"
+
+#: templates/sidebar.html:31
+msgid "Latest Entries"
+msgstr "最近文章"
+
+#: templates/sidebar.html:40
+msgid "Recent Comments"
+msgstr "最新评论"
+
+#: templates/sidebar.html:44
+msgid "Show the Comment"
+msgstr "查看评论"
+
+#: templates/sidebar.html:50
+msgid "Tags Cloud"
+msgstr "标签"
+
+#: templates/admin/base_site.html:3
+msgid "Monshellog site admin"
+msgstr "Monshellog 网站管理"
+
+#: templates/admin/base_site.html:5
+msgid "Monshellog administration"
+msgstr "Monshellog 管理"
