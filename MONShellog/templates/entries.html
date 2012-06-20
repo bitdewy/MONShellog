@@ -1,19 +1,19 @@
 {% extends "base.html" %}{% load i18n filters%}
 {%block title%}{% trans "All Entries" %} | Monshellog{%endblock%}
-{% block content %} 
+{% block content %}
 <div class="content">
 <div class="fuss nova">{% trans "All Entries" %}</div>
 <div class="post">
 <div class="entry clearfix">
 <h3 id="month" class="clearfix">{% trans "Entries" %}：</h3>
-<ul class="list">	
+<ul class="list">
 {%for entry in entries%}
 <li><a href="{{entry.get_absolute_url}}" title="{{entry.headline}}">{{entry.headline|truncatelen:"40"}}</a></li>
 {%endfor%}
 </ul>
 </div>
 </div>
-<div class="navigation"><div class="previous-entries nova-l">{% if has_previous %}<a href="?page={{previous}}" title="{% trans "previous page" %}">{% trans "previous" %}</a>{% endif %}</div> 
+<div class="navigation"><div class="previous-entries nova-l">{% if has_previous %}<a href="?page={{previous}}" title="{% trans "previous page" %}">{% trans "previous" %}</a>{% endif %}</div>
 <div class="next-entries nova-r">{% if has_next%}<a href="?page={{next}}" title="{% trans 'next page' %}">{% trans "next" %}</a>{% endif %}</div></div>
 </div>
 {% endblock %}

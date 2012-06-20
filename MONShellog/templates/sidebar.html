@@ -3,16 +3,16 @@
 <ul class="sidebar-ul">
 <li class="sidebar-li">
 <div class="sidebar-rssfeed"><a href="/feeds/rss">{% trans "Subscribe RSS Feed" %}</a></div>
-<div class="sidebar-widget sidebar-rssitems">{% trans "Subscribe with" %}: 
-<a href="#" target="_blank" rel="nofollow" style="color:#54BF4C;">Windows Live</a>, 
-<a href="#" target="_blank" rel="nofollow" style="color:#979DD7;">Google Reader</a>, 
-<a href="#" target="_blank" rel="nofollow" style="color:#2578CD;">iGoogle</a>, 
-<a href="#" target="_blank" rel="nofollow" style="color:#D32930;">My Yahoo!</a>, 
-<a href="#" target="_blank" rel="nofollow" style="color:#7879AE;">PageFlakes.com</a>, 
-<a href="#" target="_blank" rel="nofollow" style="color:#FA930D;">NetVibes.com</a>, 
-<a href="#" target="_blank" rel="nofollow"  style="color:#79A539;">Newsgator.com</a>, 
-<a href="#" target="_blank" rel="nofollow" style="color:#F05008;">My AOL</a>, 
-<a href="#" target="_blank" rel="nofollow" style="color:#1D78D9;">BlogLines.com</a>, 
+<div class="sidebar-widget sidebar-rssitems">{% trans "Subscribe with" %}:
+<a href="#" target="_blank" rel="nofollow" style="color:#54BF4C;">Windows Live</a>,
+<a href="#" target="_blank" rel="nofollow" style="color:#979DD7;">Google Reader</a>,
+<a href="#" target="_blank" rel="nofollow" style="color:#2578CD;">iGoogle</a>,
+<a href="#" target="_blank" rel="nofollow" style="color:#D32930;">My Yahoo!</a>,
+<a href="#" target="_blank" rel="nofollow" style="color:#7879AE;">PageFlakes.com</a>,
+<a href="#" target="_blank" rel="nofollow" style="color:#FA930D;">NetVibes.com</a>,
+<a href="#" target="_blank" rel="nofollow"  style="color:#79A539;">Newsgator.com</a>,
+<a href="#" target="_blank" rel="nofollow" style="color:#F05008;">My AOL</a>,
+<a href="#" target="_blank" rel="nofollow" style="color:#1D78D9;">BlogLines.com</a>,
 <a href="#" target="_blank" rel="nofollow" style="color:#D23D05;">Anothr.com</a></div>
 </li>
 <li class="sidebar-li">
@@ -32,7 +32,7 @@
 <ul class="list_page">
 {%for entry in entries%}
 <li><a href="{{entry.get_absolute_url}}" title="{{entry.headline}}">{{entry.headline|safe|truncatewords_html:"2"}}</a></li>
-{%endfor%}	
+{%endfor%}
 </ul>
 </li>
 

@@ -4,13 +4,13 @@
 <script type="text/javascript" src="/media/js/comment.textarea.js"></script>
 <script type="text/javascript">
         function Quote(quote)
-        {            
+        {
             var oEditor = FCKeditorAPI.GetInstance('id_comment') ;
             oEditor.SetHTML(quote);
             oEditor.Focus();
             return true;
         }
-</script> 
+</script>
 <div class="content">
 {%if form.author.errors or form.email.errors or form.comment.errors or form.url.errors%}
 <div class="fuss nova"><Strong>{% trans "Oops" %} : </Strong>{% trans "Please correct follow error !" %}
@@ -72,7 +72,7 @@
 <h3 class="comments-title" id="respond">{% trans "sorry,comment closed" %}</h3>
 {%endif%}
 </div>
-<div class="navigation"><div class="previous-entries nova-l">{% if previous %}<a href="{{previous.get_absolute_url}}" title="{{previous.headline}}">{% trans "previous" %}</a>{% endif %}</div> 
+<div class="navigation"><div class="previous-entries nova-l">{% if previous %}<a href="{{previous.get_absolute_url}}" title="{{previous.headline}}">{% trans "previous" %}</a>{% endif %}</div>
 <div class="next-entries nova-r">{% if next%}<a href="{{next.get_absolute_url}}" title="{{next.headline}}">{% trans "next" %}</a>{% endif %}</div></div>
 </div></div>
 {% endblock %}

@@ -2,14 +2,14 @@
 {%load i18n%}
 {%block title%}{% trans "Archives" %} | Monshellog{%endblock%}
 
-{% block content %} 
+{% block content %}
 <div class="content">
 <div class="fuss nova">{% trans "Archives" %}</div>
 <div class="post">
 <div class="entry clearfix">
 <h3 id="month" class="clearfix">{% trans "Archives" %}：</h3>
-<ul class="list">	
-{% for arch in archive %}    
+<ul class="list">
+{% for arch in archive %}
 <li><a href="{{arch.link}}" title="{{arch.title}}">{{arch.title}}</a></li>
 {%endfor%}
 </ul>

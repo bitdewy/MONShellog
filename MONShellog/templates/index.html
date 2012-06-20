@@ -1,5 +1,5 @@
 {% extends "base.html" %}{%load i18n filters%}
-{% block content %} 
+{% block content %}
 <div class="content">
 {%block bar%}
 {%endblock%}
@@ -22,7 +22,7 @@
 <div class="notice nova"><div class="post-tags">{%for tag in entry.tags.all%}<a href="{{tag.get_absolute_url}}" title="">{{tag}}</a>&nbsp;&nbsp;{%endfor%}</div></div>
 </div>{% endfor %}
 
-<div class="navigation"><div class="previous-entries nova-l">{% if has_previous %}<a href="?page={{previous}}" title="{% trans "previous page" %}">{% trans "previous" %}</a>{% endif %}</div> 
+<div class="navigation"><div class="previous-entries nova-l">{% if has_previous %}<a href="?page={{previous}}" title="{% trans "previous page" %}">{% trans "previous" %}</a>{% endif %}</div>
 <div class="next-entries nova-r">{% if has_next%}<a href="?page={{next}}" title="{% trans 'next page' %}">{% trans "next" %}</a>{% endif %}</div></div>
 </div>
 {% endblock %}
