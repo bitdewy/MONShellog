@@ -58,7 +58,7 @@
 </div>{%endfor%}
 {%if form%}
 <h3 class="comments-title" id="respond">{% trans "Leave a Comment" %}</h3>
-<form action="." method="post" id="commentform">
+<form action="." method="post" id="commentform">{% csrf_token %}
 <p>{{form.author.errors}}{{form.author}}
 <label for="author"><small>{% trans "Name (required)" %} - <a href="http://www.gravatar.com/" title="Gravatar image" target="_blank" rel="nofollow">{% trans "set Gravatar Head Image" %}</a></small></label></p>
 <p>{{form.email.errors}}{{form.email}}
