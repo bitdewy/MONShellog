@@ -10,7 +10,7 @@ class RecentEntriesRSS(Feed):
     
     def items(self):
         return Entry.objects.filter(status__exact='publish').order_by('-id')[:10]
-
+    
     def item_pubdate(self, item):
         return item.pub_date
 

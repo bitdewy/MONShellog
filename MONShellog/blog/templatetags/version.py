@@ -14,4 +14,3 @@ def get_version():
         v = '%s %s' % (v, VERSION[-1])
     return v
 
-

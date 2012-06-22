@@ -12,7 +12,7 @@ def truncatelen(value,length = 40):
     str.replace('&quot;','"')
     str.replace('&lt;','<')
     str = force_unicode(str)
-    string = ''   
+    string = ''
     index = 0
     len = int(length)
     while len > 0:

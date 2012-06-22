@@ -9,11 +9,6 @@ from django.conf import settings
 
 admin.autodiscover()
 
-feeds = {
-         'rss': RecentEntriesRSS,
-         'atom':RecentEntriesAtom
-        }
-
 urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'MONShellog.views.home', name='home'),
@@ -31,7 +26,8 @@ urlpatterns = patterns('',
     (r'^links/$', 'MONShellog.blog.views.link'),
     (r'^entries/$', 'MONShellog.blog.views.entries'),
     (r'^comments/$', 'MONShellog.blog.views.comments'),
-    (r'^feeds/(?P<url>.*)/$', 'django.contrib.syndication.views.Feed',{'feed_dict': feeds}),
+    (r'^feeds/rss/$', RecentEntriesRSS()),
+    (r'^feeds/atom/$', RecentEntriesAtom()),
     url(r'^entry/(?P<key>.*)/$', 'MONShellog.blog.views.entry',name = 'entry'),
     url(r'^category/(?P<cat>.*)/$', 'MONShellog.blog.views.category',name = 'cate'),
     url(r'^tag/(?P<tag>.*)/$', 'MONShellog.blog.views.tag',name = 'tag'),
